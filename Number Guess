@@ -1,0 +1,16 @@
+import random
+num1 = random.randint(0, 10)
+
+print('Hello, pick a number between 0 and 20, what is your guess?')
+number_guess = int(input())
+
+while number_guess < num1:
+    print(f'{number_guess} is too low! Pick an other one')
+    number_guess = int(input())
+while number_guess > num1:
+    print(f'{number_guess} is too high! Pick an other one')
+    number_guess = int(input())
+else:
+    print(f'you are right, {number_guess} was my pick!')
+
+input("Press Enter to leave")
