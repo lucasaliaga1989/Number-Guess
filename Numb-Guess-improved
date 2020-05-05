@@ -1,0 +1,34 @@
+import random
+import sys
+num1 = random.randint(0, 10)
+
+
+def pick_num():
+    print('Hello, pick a number between 0 and 20, what is your guess?')
+    try:
+        number_guess = int(input())
+    except ValueError:
+        print('Invalid Selection')
+        pick_num()
+
+    while number_guess < num1:
+        print(f'{number_guess} is too low! Pick an other one')
+        pick_num()
+    while number_guess > num1:
+        print(f'{number_guess} is too high! Pick an other one')
+        pick_num()
+    else:
+        print(f'you are right, {number_guess} was my pick!')
+        exit_ap()
+
+
+def exit_ap():
+    exit_ent = input("Press Enter to leave")
+    if exit_ent == "":
+        sys.exit("Thank you for Playing. See you next time!")
+    else:
+        print('Invalid selection')
+        exit_ap()
+
+
+pick_num()
